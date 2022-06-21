@@ -15,11 +15,10 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print()
-    print('Hello! Let\'s explore some US bikeshare data!')
+
+    print('\nHello! Let\'s explore some US bikeshare data!')
     print("Don't worry about upper and lowercases. We will take care of it!")
-    print()
-    print("The cities in our database are Chicago, New York City and Washington.\nThe months in our database are from January to June and you can select all of them by typing \"all\".")
+    print("\nThe cities in our database are Chicago, New York City and Washington.\nThe months in our database are from January to June and you can select all of them by typing \"all\".")
 
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
@@ -37,9 +36,7 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
 
-        print()
-
-        month = str(input("Select the month: ")).lower()
+        month = str(input("\nSelect the month: ")).lower()
 
         month_options = ["all", "january", "february", "march", "april", "may", "june"]
 
@@ -55,9 +52,7 @@ def get_filters():
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
 
-        print()
-
-        day = input("Select the day of the week: ").lower()
+        day = input("\nSelect the day of the week: ").lower()
 
         day_options = ["all", "monday", "thursday", "wednesday", "tuesday", "friday", "saturday", "sunday"]
 
@@ -106,10 +101,8 @@ def load_data(city, month, day):
     # This will show the head of a raw data using a while loop and offer to show more of it if the user want to
     while True:
 
-        print()
-
         n = 5
-        q1 = input("Do you want to see the raw data? ").lower()
+        q1 = input("\nDo you want to see the raw data? ").lower()
 
         try:
             if q1 == "yes":
@@ -117,8 +110,7 @@ def load_data(city, month, day):
                 print(df.head(n))
 
                 while True:
-                    print()
-                    q2 = input("Do you want to see more of the raw data? ")
+                    q2 = input("\nDo you want to see more of the raw data? ")
                     try:
                         if q2 == "yes":
                             n += 5
@@ -213,8 +205,7 @@ def trip_duration_stats(df):
     # TO DO: display total travel time
     total = df["Trip Duration"].sum()
 
-    print("The total time our bikes have been rented is {} seconds.".format(total))
-    print()
+    print("The total time our bikes have been rented is {} seconds.\n".format(total))
 
     # TO DO: display mean travel time
     mean = df["Trip Duration"].mean()
@@ -234,18 +225,15 @@ def user_stats(df):
     # TO DO: Display counts of user types
     user_types = df["User Type"].value_counts()
 
-    print("Count of user types \n{}.".format(user_types))
-    print()
+    print("Count of user types \n{}.\n".format(user_types))
 
 
     # TO DO: Display counts of gender
     try:
         user_gender = df["Gender"].value_counts()
-        print("Count of user gender \n{}.".format(user_gender))
-        print()
+        print("Count of user gender \n{}.\n".format(user_gender))
     except:
-        print("We don't have the user gender statistic from Washington.")
-        print()
+        print("We don't have the user gender statistic from Washington.\n")
 
 
     # TO DO: Display earliest, most recent, and most common year of birth
