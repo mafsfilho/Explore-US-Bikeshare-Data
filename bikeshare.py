@@ -23,9 +23,9 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     while True:
 
-        print()
+        print("First, you'll need to choose between the following cities: Chicaco, New York City and Washington.")
 
-        city = input("Select the city: ").lower()
+        city = input("So now, select the city that you want to analyze: ").lower()
 
         try:
             city == CITY_DATA[city]
@@ -35,6 +35,8 @@ def get_filters():
 
     # TO DO: get user input for month (all, january, february, ... , june)
     while True:
+
+        print("\nOur data base has data from January to June, so you can select any of these months or select them all by typing \"all\".")
 
         month = str(input("\nSelect the month: ")).lower()
 
@@ -46,11 +48,13 @@ def get_filters():
             else:
                 raise KeyError
         except:
-            print("That\'s not a valid month. You can choose all of them by typing \"all\" or choose only one between january and june.")
+            print("That\'s not a valid month. You can choose all of them by typing \"all\" or choose only one between January and June.")
 
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     while True:
+
+        print("\nEnter the day of the week that you want to analyze or type \"all\" to select all of them.")
 
         day = input("\nSelect the day of the week: ").lower()
 
